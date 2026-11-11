@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f8f8f6" />
+    <title>Wordle — Daily Word Game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game">
+      <header class="topbar">
+        <button class="icon-button" id="helpButton" type="button" aria-label="How to play">?</button>
+        <h1>WORDLE Lite</h1>
+        <button class="icon-button new-game-button" id="newGameButton" type="button" aria-label="Start a new game" title="New game">↻</button>
+      </header>
+
+      <section class="game-area" aria-label="Wordle game">
+        <div id="board" class="board" role="grid" aria-label="Guess board"></div>
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+        <div id="keyboard" class="keyboard" aria-label="Keyboard"></div>
+      </section>
+
+      <dialog id="helpDialog" class="help-dialog">
+        <button id="closeHelpButton" class="dialog-close" type="button" aria-label="Close">×</button>
+        <h2>How to play</h2>
+        <p>Guess the hidden five-letter word in six tries.</p>
+        <p>After each guess, the colors show how close you are:</p>
+        <div class="example-row"><span class="example-tile correct">W</span><span><strong>Green</strong> means the letter is in the word and in the right spot.</span></div>
+        <div class="example-row"><span class="example-tile present">O</span><span><strong>Yellow</strong> means the letter is in the word, but in a different spot.</span></div>
+        <div class="example-row"><span class="example-tile absent">X</span><span><strong>Gray</strong> means the letter isn't in the word.</span></div>
+        <p class="help-note">Type with your keyboard or use the buttons below the board.</p>
+      </dialog>
+
+      <dialog id="winDialog" class="win-dialog" aria-labelledby="winTitle" aria-describedby="winMessage">
+        <h2 id="winTitle">Brilliant! 🎉</h2>
+        <p id="winMessage"></p>
+        <div class="win-actions">
+          <button id="closeWinButton" type="button">Close</button>
+          <button id="playAgainButton" class="primary-button" type="button">Play again</button>
+        </div>
+      </dialog>
+
+      <footer>A little word game. Made for you.</footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
